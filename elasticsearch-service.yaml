@@ -1,0 +1,18 @@
+kind: Service
+apiVersion: v1
+metadata:
+  name: elasticsearch
+  namespace: elastic-stackspec:
+  selector:
+    name: elastic-search
+  type: NodePort
+  ports:
+  - port: 9200
+    targetPort: 9200
+    nodePort: 30200
+    name: port1
+
+  - port: 9300
+    targetPort: 9300
+    nodePort: 30300
+    name: port2
